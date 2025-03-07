@@ -37,13 +37,17 @@ class CalculatorApp(ft.Container):
         super().__init__()
         self.reset()
 
+        #Texto para a expressão completa
+        self.expression = ft.Text(value="", color=ft.colors.WHITE70, size=20)
         self.result = ft.Text(value="0", color=ft.colors.WHITE, size=20)
+        
         self.width = 350
         self.bgcolor = ft.colors.BLACK
         self.border_radius = ft.border_radius.all(20)
         self.padding = 20
         self.content = ft.Column(
             controls=[
+                ft.Row(controls=[self.expression], alignment="end"),  # Exibir expressão
                 ft.Row(controls=[self.result], alignment="end"),
                 ft.Row(
                     controls=[
